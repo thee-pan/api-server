@@ -102,7 +102,7 @@ function checkTokenExpiry() {
   setInterval(async () => {
     const current_time = Date.now() / 1000;
     console.log(current_time, "  ", Date.parse(expiryTime));
-    if (current_time >= 1686215954.684) {
+    if (current_time >= Date.parse(expiryTime)) {
       try {
         await tokenRenewal();
         console.log("Token renewed successfully");
